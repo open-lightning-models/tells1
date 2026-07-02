@@ -4,7 +4,8 @@ Thermo-Electrodynamic Lightning Leader Simulation (TELLS) model (version 1.0)
 
 This is a Python implementation of a model for the simulation of upward lightning leader initiation and dynamics.
 
-############################PARAMETERS######################
+## PARAMETERS
+
 accepts float
 -rod_end: the height of the triggering object in m
 -E_amb: ambient field in V/m, is a constant value
@@ -21,12 +22,14 @@ accepts float
 -sigstr: conductivity in S/m of the streamer zone after the zone is established
 -thermal_rad_factor: factor of the thermal radius over the current radius. For example, with a current radius r_I of 1mm, thermal_rad_factor = 2 will result in a thermal radius r_g of 2mm.
 
-############################SETTINGS######################
+## SETTINGS
+
 accepts True/False
 -ignite_negative: If True, several parameters (listed below in NEGATIVE LEADER MULTIPLIERS) will be replaced to simulate a negative polarity leader
 -wait_to_start: If True, the timer to maximum time tmax will not start until the leader is initiated. Recording to the output .txt file is also not done. Will attempt to ignite a leader for 1 ms before quitting
 
-############################SIMULATION######################
+## SIMULATION
+
 accepts float
 -tmax: Maximum simulation time in seconds
 -tstep: Time step in seconds
@@ -36,7 +39,8 @@ accepts float
 -space_seg_len: grid size of leader in m, each cylindrical component of the leader/streamer will have this height
 -crit_temp: temperature in K when leader flags are enabled. At this temperature, the LTE conductivity takes over in the conductivity relaxation equation
 
-############################NEGATIVE LEADER MULTIPLIERS######################
+## NEGATIVE LEADER MULTIPLIERS
+
 accepts float
 these multipliers will be applied to these parameters when ignite_negative=True
 -rq_mult: charge radius r_q multiplier
@@ -46,7 +50,8 @@ these multipliers will be applied to these parameters when ignite_negative=True
 -tau_mult: timescale multiplier
 -thermal_rad_mult: thermal radius r_g multiplier
 
-############################ERRORS######################
+## ERRORS
+
 IF YOU ARE GETTING NAN OR QUIT ERRORS, COMMON FIXES:
 !!!-reduce time step tstep. 1 nanosecond (1e-9) is the default when triggering object conductivity is 60e4, for each order of magnitude gain in conductivity, decrease time step by an order of magnitude
 !!-make sure that space_seg_len is not larger than rq_air, that is space_seg_len < rq_air
