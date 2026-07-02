@@ -1,4 +1,4 @@
-TELLS_v1.0.py
+### TELLS_v1.0.py
 
 Thermo-Electrodynamic Lightning Leader Simulation (TELLS) model (version 1.0)
 
